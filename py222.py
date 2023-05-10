@@ -83,7 +83,7 @@ pieceDefs = np.array([ \
 ])
 
 # OP representation from (hashed) piece stickers
-pieceInds = np.zeros([58, 2], dtype=np.int)
+pieceInds = np.zeros([58, 2], dtype=np.int32)
 pieceInds[50] = [0, 0]; pieceInds[54] = [0, 1]; pieceInds[13] = [0, 2]
 pieceInds[28] = [1, 0]; pieceInds[42] = [1, 1]; pieceInds[ 8] = [1, 2]
 pieceInds[14] = [2, 0]; pieceInds[21] = [2, 1]; pieceInds[ 4] = [2, 2]
@@ -93,7 +93,7 @@ pieceInds[25] = [5, 0]; pieceInds[18] = [5, 1]; pieceInds[35] = [5, 2]
 pieceInds[23] = [6, 0]; pieceInds[57] = [6, 1]; pieceInds[37] = [6, 2]
 
 # piece stickers from OP representation
-pieceCols = np.zeros([7, 3, 3], dtype=np.int)
+pieceCols = np.zeros([7, 3, 3], dtype=np.int32)
 pieceCols[0, 0, :] = [0, 5, 4]; pieceCols[0, 1, :] = [4, 0, 5]; pieceCols[0, 2, :] = [5, 4, 0]
 pieceCols[1, 0, :] = [0, 4, 2]; pieceCols[1, 1, :] = [2, 0, 4]; pieceCols[1, 2, :] = [4, 2, 0]
 pieceCols[2, 0, :] = [0, 2, 1]; pieceCols[2, 1, :] = [1, 0, 2]; pieceCols[2, 2, :] = [2, 1, 0]
@@ -133,7 +133,7 @@ def isSolved(s):
 
 # normalize stickers relative to a fixed DLB corner
 def normFC(s):
-  normCols = np.zeros(6, dtype=np.int)
+  normCols = np.zeros(6, dtype=np.int32)
   normCols[s[18] - 3] = 1
   normCols[s[23] - 3] = 2
   normCols[s[14]] = 3
@@ -147,7 +147,7 @@ def getOP(s):
 
 # get sticker representation from OP representation
 def getStickers(sOP):
-  s = np.zeros(24, dtype=np.int)
+  s = np.zeros(24, dtype=np.int32)
   s[[14, 18, 23]] = [3, 4, 5]
   for i in range(7):
     s[pieceDefs[i]] = pieceCols[sOP[i, 0], sOP[i, 1], :]
