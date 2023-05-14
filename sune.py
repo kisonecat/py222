@@ -184,12 +184,10 @@ if __name__ == "__main__":
               (2,5): (260,30),
        }
     
-    print("\\documentclass{article}")
-    print("\\usepackage{tikz}")
-    print("\\usepackage{nopageno}")
-    print("\\usetikzlibrary{arrows}")
-    print("\\begin{document}")
-    print("\\begin{tikzpicture}")
+    with open('sune-header.tex', 'r') as file:
+        for line in file:
+            print(line.rstrip('\n'))
+    
     for j in range(len(clusters)):
         cluster = clusters[j]
         for c in range(len(cluster)):
@@ -211,8 +209,11 @@ if __name__ == "__main__":
             print("\draw[->] ({}) to [out={},in={}] ({});".format(starting, angleO, angleI,ending))
         else:
             print("\draw[->] ({}) -> ({});".format(starting, ending))
-    print("\\end{tikzpicture}")        
-    print("\\end{document}")
+            
+    with open('sune-footer.tex', 'r') as file:
+        for line in file:
+            print(line.rstrip('\n'))
+
         
     #print(topFace(s))
     #py222.printCube(s)
