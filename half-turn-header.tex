@@ -1,0 +1,21 @@
+\documentclass[12pt]{article}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{3d}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathmorphing}
+\usepackage{hyperref}
+\usepackage{fullpage}
+\usepackage{nopageno}
+\begin{document}
+\begin{center}\Huge $180^\circ$ turns on the $2 \times 2 \times 2$ cube\end{center}
+\tikzset{edgeR/.style={line width=1.5pt,dashed,dash pattern=on 5pt off 1pt,color=red!90!black}}
+\tikzset{edgeF/.style={line width=1.5pt,color=green!90!black,densely dotted}}
+\tikzset{edgeU/.style={line width=1.5pt,color=blue,decorate,decoration={snake,amplitude=.2mm,segment length=1mm,post length=0mm,pre length=0mm}}}
+    \pgfmathsetmacro\radius{0.1}
+    \tdplotsetmaincoords{60}{135}
+
+    \vfill
+    
+    \begin{tikzpicture}

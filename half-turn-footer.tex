@@ -1,0 +1,29 @@
+\end{tikzpicture}
+
+\vfill
+
+\begin{tikzpicture}[y=0.2in]
+  \node (R) at (0,0) {
+\begin{tikzpicture}
+  \node (R) at (59pt,0) {$R^2$};
+  \draw[edgeR] (0,0) -- (R);
+\end{tikzpicture}};
+  \node (U) at (0,1) {
+\begin{tikzpicture}
+  \node (U) at (59pt,0) {$U^2$};
+  \draw[edgeU] (0,0) -- (U);
+\end{tikzpicture}};
+  \node (F) at (0,2) {
+\begin{tikzpicture}
+  \node (F) at (59pt,0) {$F^2$};
+  \draw[edgeF] (0,0) -- (F);
+\end{tikzpicture}};
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=south west,inner sep=0pt,rotate=90] at ([xshift=-12pt,yshift=12pt]current page.south east) {\footnotesize \url{https://github.com/kisonecat/py222}};
+\end{tikzpicture}
+
+\end{document}
+
+
